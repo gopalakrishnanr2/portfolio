@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gopalakrishnan R - Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #000;
+      color: #fff;
+    }
+    .navbar {
+      background-color: #222;
+    }
+    .navbar a {
+      color: #fff !important;
+    }
+
+    .navbar .nav-link.active {
+    color: #0d6efd !important;
+    font-weight: 600;
+    }
+    .navbar .nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    color: white !important;
+  }
+
+  .navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #0d6efd;
+    transition: width 0.3s ease;
+  }
+
+  .navbar .nav-link:hover::after
+  {
+    width: 100%;
+  }
+
+  .navbar .nav-link.active {
+    color: #0d6efd !important;
+    font-weight: 600;
+  }
+
+    .hero {
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    .section-title {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #111;
+      color: #ccc;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    .timeline {
+  position: relative;
+  margin-left: 25px;
+  border-left: 2px solid #0d6efd;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -7px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background-color: #0d6efd;
+  border-radius: 50%;
+  border: 2px solid white;
+  z-index: 2;
+}
+
+.timeline-content {
+  padding-left: 10px;
+}
+
+.timeline-content h5 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.timeline-content small {
+  font-size: 0.85rem;
+}
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.card {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.card:hover .project-overlay {
+  opacity: 1;
+}
+
+.card-img-top {
+  transition: transform 0.3s ease;
+  height: 200px;
+  object-fit: cover;
+
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="70" tabindex="0">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-white fw-bold" href="#">GK</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="container text-center" data-aos="fade-up">
+    <h1>Hello, I'm <span class="text-info">Gopalakrishnan</span></h1>
+    <p class="lead mt-3">3D Generalist | Motion Graphics Animator</p>
+
+     <!-- Self Intro -->
+    <p class="mt-3 text-center">I craft explainer videos,character animations, and stylized 3D visuals.</p>
+    <p>Proficient in integrating 2D and 3D workflows using Blender and After Effects.</p>
+    <p>Strong focus on stylized shading, lighting, and visual storytelling.</p>
+
+    <!-- Social Media Icons -->
+    <div class="d-flex justify-content-center gap-4 mt-4">
+      <a href="https://www.behance.net/gopalakrishnanr" target="_blank" class="text-white fs-4">
+  	<i class="fab fa-behance"></i>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/gopalakrishnan-r-47314a154/" target="_blank" class="text-white fs-4">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      
+      <a href="https://your-notion-link.com" target="_blank" class="text-white fs-4">
+  	<i class="fas fa-book"></i>
+      </a>
+    </div>
+
+    <!-- Buttons -->
+    <div class="mt-4">
+      <a href="#contact" class="btn btn-primary px-4 me-3">Get in Touch</a>
+      <a href="#projects" class="btn btn-outline-light px-4">View Projects</a>
+    </div>
+  </div>
+ 
+</section>
+
+<!-- About Section with Timeline and Descriptions -->
+<section id="about" class="py-5 text-white">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section-title text-center mb-5">About Me</h2>
+    <div class="row">
+
+      <!-- Experience -->
+      <div class="col-md-6">
+        <h4 class="mb-5 text-center">Experience</h4>
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <p class="mb-1 fw-bold">2019- Present | 3D Generalist | Motion graphic Animator</p>
+              <p class="mb-1">MyPromovideos Private Limited</p>
+              <p class="text-light small">I have created explainer videos and motion graphics for global clients. I introduced Blender 3D into the studio pipeline, enabling a 2D/3D hybrid workflow, and produced high-quality animations using After Effects. Starting as an intern, I quickly advanced and also mentored teammates in adopting new tools and techniques.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+<!-- Education -->
+      <div class="col-md-6">
+        <h4 class="mb-5 text-center">Education</h4>
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <p class="mb-1 fw-bold">2015 – 2019 | B.E - Mechanical</p>
+              <p class="mb-1">Kumaraguru College of technology, Coimbatore</p>
+              <p class="text-light small">I founded Kilapu, a creative startup built to empower student entrepreneurs by providing a platform to create, showcase, and sell their art. Kilapu fostered a collaborative space for young creators to turn their passion into products, encouraging innovation and self-expression within the campus community.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+<div class="col-12 text-center mt-5">
+  <a href="resume.pdf" class="btn btn-primary px-4 py-2" target="_blank" download>
+    <i class="fas fa-download me-2"></i>Download Resume
+  </a>
+</div>
+  </div>
+</section>
+
+
+
+<!-- Skills Section -->
+<section id="skills" class="py-5 bg-black text-white">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section-title text-center mb-5">My Skills</h2>
+    <div class="row g-4">
+
+      <!-- Skill Card -->
+       <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-chalkboard-teacher fa-2x mb-3 text-primary"></i>
+            <h5 class="card-title">Explainer Videos</h5>
+            <p class="card-text small">Simplifying ideas through animated storytelling.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-pencil-ruler fa-2x mb-3 text-primary"></i>
+            <h5 class="card-title">2D Animation</h5>
+            <p class="card-text small">Creating motion in 2D space using characters and assets.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-cube fa-2x mb-3 text-primary"></i>
+            <h5 class="card-title">3D Animation</h5>
+            <p class="card-text small">Animating objects and characters in 3D space with depth and realism.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-running fa-2x mb-3 text-primary"></i>
+            <h5 class="card-title">Rigging</h5>
+            <p class="card-text small">Creating skeletons and controls for animating 3D characters or objects.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-fill-drip fa-2x mb-3 text-primary"></i>
+            <h5 class="card-title">Shading</h5>
+            <p class="card-text small">Defining how surfaces react to light and look visually in renders.</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-brush fa-2x mb-3 text-primary"></i>
+            <h5 class="card-title">Texturing</h5>
+            <p class="card-text small">Applying surface details and images to 3D models.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-lightbulb fa-2x mb-3 text-primary"></i>
+            <h5 class="card-title">Lighting</h5>
+            <p class="card-text small">Setting up virtual lighting to enhance depth, mood, and realism.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-video fa-2x mb-3 text-primary"></i>
+            <h5 class="card-title">Video Editing</h5>
+            <p class="card-text small">Cutting, refining, and assembling footage for storytelling.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-layer-group fa-2x mb-3 text-primary"></i>
+            <h5 class="card-title">Compositing</h5>
+            <p class="card-text small">Combining visual elements from multiple sources into one scene.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-bolt fa-2x mb-3 text-primary"></i>
+            <h5 class="card-title">Motion Graphics</h5>
+            <p class="card-text small">Animating graphics for branding, intros, and visual impact.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-font fa-2x mb-3 text-primary"></i>
+            <h5 class="card-title">Kinetic Typography</h5>
+            <p class="card-text small">Animating text to express ideas dynamically.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-random fa-2x mb-3 text-primary"></i>
+            <h5 class="card-title">2D/3D Hybrid Pipeline</h5>
+            <p class="card-text small">Integrating 2D and 3D workflows for stylized animations.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<!-- Tools Subsection -->
+<div class="mt-5">
+  <h3 class="text-center mb-4">Tools</h3>
+  <div class="row g-4 justify-content-center">
+
+    <!-- Blender -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+        <div class="card-body">
+          <i class="fas fa-cube fa-2x mb-3 text-primary"></i>
+          <h5 class="card-title">Blender</h5>
+          <p class="card-text">Used for 3D modeling, animation, rigging, and rendering.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- After Effects -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+        <div class="card-body">
+          <i class="fas fa-bolt fa-2x mb-3 text-primary"></i>
+          <h5 class="card-title">After Effects</h5>
+          <p class="card-text">For motion graphics, compositing, and visual effects.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photoshop -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="card bg-dark text-white text-center h-100 border-0 shadow-sm">
+        <div class="card-body">
+          <i class="fas fa-image fa-2x mb-3 text-primary"></i>
+          <h5 class="card-title">Photoshop</h5>
+          <p class="card-text">Used for texturing, image editing, and design work.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</section>
+
+
+
+<!-- Projects Section -->
+<section id="projects" class="py-5 bg-black text-white">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section-title text-center mb-5">My Projects</h2>
+    <div class="row g-4">
+      
+      <!-- Project Card -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark border-0 shadow-sm h-100">
+          <a href="https://www.youtube.com/watch?v=jkXt-OlRLIo" target="_blank">
+            <img src="images/Project1.png" class="card-img-top" alt="Project Thumbnail 1">
+          
+          <div class="project-overlay d-flex flex-column justify-content-center align-items-center text-center">
+        	<h5 class="text-white fw-bold mb-1">Fortanix</h5>
+        	<small class="text-light">3D Explainer video</small>
+         </div>
+        </div>
+	</a>
+      </div>
+
+      <!-- Copy & customize the card below 11 more times -->
+     <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark border-0 shadow-sm h-100">
+          <a href="https://www.behance.net/gallery/216318793/Curalinc-Healthcare-Explainer-Video" target="_blank">
+            <img src="images/Project2.png" class="card-img-top" alt="Project Thumbnail 1">
+          
+         <div class="project-overlay d-flex flex-column justify-content-center align-items-center text-center">
+        	<h5 class="text-white fw-bold mb-1">Curalink</h5>
+        	<small class="text-light">2D & 3D Explainer Video</small>
+         </div>
+        </div>
+	</a>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark border-0 shadow-sm h-100">
+          <a href="https://www.youtube.com/watch?v=e7Bo8ipCEvo" target="_blank">
+            <img src="images/Project3.png" class="card-img-top" alt="Project Thumbnail 2">
+          
+          <div class="project-overlay d-flex flex-column justify-content-center align-items-center text-center">
+        	<h5 class="text-white fw-bold mb-1">Thinkitive</h5>
+        	<small class="text-light">2D Character Animated</small>
+		<small class="text-light">Explainer Video</small>
+         </div>
+        </div>
+	</a>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark border-0 shadow-sm h-100">
+          <a href="https://www.behance.net/gallery/202615295/3D-Explainer-Video-for-EV-Battery-Tech-by-Accelera" target="_blank">
+            <img src="images/Project4.png" class="card-img-top" alt="Project Thumbnail 1">
+          
+          <div class="project-overlay d-flex flex-column justify-content-center align-items-center text-center">
+        	<h5 class="text-white fw-bold mb-1">Accelera</h5>
+        	<small class="text-light">3D Explainer Video</small>
+         </div>
+        </div>
+	</a>
+      </div>
+
+      <!-- Copy & customize the card below 11 more times -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark border-0 shadow-sm h-100">
+          <a href="https://www.youtube.com/watch?v=N3y46y3Is6g" target="_blank">
+            <img src="images/Project5.png" class="card-img-top" alt="Project Thumbnail 2">
+          
+          <div class="project-overlay d-flex flex-column justify-content-center align-items-center text-center">
+        	<h5 class="text-white fw-bold mb-1">The Last Christams</h5>
+        	<small class="text-light">2D & 3D Stylized Video</small>
+         </div>
+        </div>
+	</a>
+      </div>
+
+     <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark border-0 shadow-sm h-100">
+          <a href="https://www.behance.net/gallery/229369883/Population-Day-2024-3D-Animation-video" target="_blank">
+            <img src="images/Project6.png" class="card-img-top" alt="Project Thumbnail 3">
+          
+          <div class="project-overlay d-flex flex-column justify-content-center align-items-center text-center">
+        	<h5 class="text-white fw-bold mb-1">Population Day</h5>
+        	<small class="text-light">3D Animated Video</small>
+         </div>
+        </div>
+	</a>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark border-0 shadow-sm h-100">
+          <a href="https://www.behance.net/gallery/229289383/Dance-Day-2024-x-IPL-Animated-Tribute" target="_blank">
+            <img src="images/Project7.png" class="card-img-top" alt="Project Thumbnail 3">
+          
+          <div class="project-overlay d-flex flex-column justify-content-center align-items-center text-center">
+        	<h5 class="text-white fw-bold mb-1">Dance Day</h5>
+        	<small class="text-light">Stylized 3D Animation</small>
+         </div>
+        </div>
+	</a>
+      </div>
+
+     
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark border-0 shadow-sm h-100">
+          <a href="https://www.youtube.com/shorts/YWwT64Rs-FA" target="_blank">
+            <img src="images/Project8.png" class="card-img-top" alt="Project Thumbnail 2">
+          
+          <div class="project-overlay d-flex flex-column justify-content-center align-items-center text-center">
+        	<h5 class="text-white fw-bold mb-1">Mango Day</h5>
+        	<small class="text-light">2D & 3D Animated Video</small>
+         </div>
+        </div>
+	</a>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark border-0 shadow-sm h-100">
+          <a href="https://www.behance.net/gallery/229224677/Boat-3D-Modeling-Breakdown-(2020)-Blender" target="_blank">
+            <img src="images/Project9.png" class="card-img-top" alt="Project Thumbnail 3">
+          
+          <div class="project-overlay d-flex flex-column justify-content-center align-items-center text-center">
+        	<h5 class="text-white fw-bold mb-1">Boat</h5>
+        	<small class="text-light">3D Modelling</small>
+         </div>
+        </div>
+	</a>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark border-0 shadow-sm h-100">
+          <a href="https://www.behance.net/gallery/228635523/Office-Trip-2024-3D-Animated-Planning-Video" target="_blank">
+            <img src="images/Project10.png" class="card-img-top" alt="Project Thumbnail 3">
+          
+          <div class="project-overlay d-flex flex-column justify-content-center align-items-center text-center">
+        	<h5 class="text-white fw-bold mb-1">Office Trip</h5>
+        	<small class="text-light">3D Stylized Video</small>
+         </div>
+        </div>
+	</a>
+      </div>
+
+     <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark border-0 shadow-sm h-100">
+          <a href="https://www.behance.net/gallery/229038487/Two-Wheeler-Rig-in-Blender-(2020)" target="_blank">
+            <img src="images/Project11.png" class="card-img-top" alt="Project Thumbnail 3">
+          
+          <div class="project-overlay d-flex flex-column justify-content-center align-items-center text-center">
+        	<h5 class="text-white fw-bold mb-1">Bike Rig</h5>
+        	<small class="text-light">Two Wheeler Rig</small>
+         </div>
+        </div>
+	</a>
+      </div>
+     
+     <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card bg-dark border-0 shadow-sm h-100">
+          <a href="https://www.youtube.com/watch?v=4r1_1xlpakc" target="_blank">
+            <img src="images/Project12.png" class="card-img-top" alt="Project Thumbnail 3">
+          
+          <div class="project-overlay d-flex flex-column justify-content-center align-items-center text-center">
+        	<h5 class="text-white fw-bold mb-1">Valimai Motion Poster</h5>
+        	<small class="text-light">3D Animation</small>
+         </div>
+        </div>
+	</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact -->
+<section id="contact" class="py-5">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section-title">Contact</h2>
+   <form action="https://formspree.io/f/meokwdlw" method="POST">
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+    </div>
+    <div class="col-md-6">
+      <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+    </div>
+  </div>
+  <div class="mb-3">
+    <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Send Message</button>
+</form>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-white text-center py-4">
+  <div class="container">
+    <p class="mb-3">&copy; 2025 Gopalakrishnan R. All rights reserved.</p>
+
+    <!-- Social Icons -->
+    <div class="d-flex justify-content-center gap-4">
+      
+       <a href="https://www.behance.net/gopalakrishnanr" target="_blank" class="text-white fs-4">
+  	<i class="fab fa-behance"></i>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/gopalakrishnan-r-47314a154/" target="_blank" class="text-white fs-4">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      
+      <a href="https://www.instagram.com/animator_gk?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-white fs-4">
+ 	 <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://your-notion-link.com" target="_blank" class="text-white fs-4">
+        <i class="fas fa-book"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>
